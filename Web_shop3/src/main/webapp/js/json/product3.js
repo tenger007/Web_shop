@@ -1,0 +1,1 @@
+[{"id":15,"shp_mch":"骆驼男装一号","flbh1":6,"flbh2":11,"pp_id":3,"shp_msh":""},{"id":16,"shp_mch":"骆驼男装二号","flbh1":6,"flbh2":11,"pp_id":3,"shp_msh":""},{"id":17,"shp_mch":"骆驼男装三号","flbh1":6,"flbh2":11,"pp_id":3,"shp_msh":""},{"id":18,"shp_mch":"骆驼男装四号","flbh1":6,"flbh2":11,"pp_id":3,"shp_msh":""}]

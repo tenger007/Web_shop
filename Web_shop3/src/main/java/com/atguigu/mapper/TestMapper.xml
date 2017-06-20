@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.TestMapper">
+
+	<select id="select_user" parameterType="com.atguigu.bean.T_MALL_USER"
+		resultType="com.atguigu.bean.T_MALL_USER">
+		select * from t_mall_user
+		where yh_mch = #{yh_mch} and yh_mm
+		= #{yh_mm}
+	</select>
+ <!--  <select id="select_yh_dzh" parameterType="int"
+  resultType="com.atguigu.bean.T_MALL_ORDER">
+   select dzh_mch from t_mall_order
+   where yh_id = #{yh_id}
+   </select> -->
+
+</mapper>

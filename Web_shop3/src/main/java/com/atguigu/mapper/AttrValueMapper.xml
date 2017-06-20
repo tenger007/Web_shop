@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.AttrValueMapper">
+
+	<insert id="insert_into_t_mall_value" parameterType="Map">
+		insert into t_mall_value(shxzh,shxm_id,shxzh_mch)
+		values
+		<foreach collection="list_value" item="val" separator=",">
+			(#{val.shxzh},#{attr_id},#{val.shxzh_mch})
+		</foreach>
+	</insert>
+
+	<insert useGeneratedKeys="true" keyColumn="id" keyProperty="id"
+		id="insert_into_t_mall_attr">
+		insert into
+		t_mall_attr(shxm_mch,flbh2)
+		values(#{shxm_mch},#{flbh2})
+	</insert>
+
+	<select id="select_attr_by_class_2_id" parameterType="int"
+		resultMap="select_attr_by_class_2_id_map">
+		select a.id as attr_id,b.id as value_id,a.*, b.* from
+		t_mall_attr a ,t_mall_value b
+		where a.Id =
+		b.shxm_id
+		and a.flbh2 =
+		#{class_2_id}
+	</select>
+
+	<resultMap type="com.atguigu.bean.OBJECT_T_MALL_ATTR"
+		id="select_attr_by_class_2_id_map" autoMapping="true">
+		<result column="attr_id" property="id" />
+		<collection ofType="com.atguigu.bean.T_MALL_VALUE"
+			property="list_value" autoMapping="true">
+			<result column="value_id" property="id" />
+		</collection>
+	</resultMap>
+
+</mapper>
